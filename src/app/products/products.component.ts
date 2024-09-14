@@ -68,20 +68,20 @@ export class ProductsComponent {
   }
 
   getAllCategories(){
-    this.http.get<Categorie[]>("http://localhost:8080/categories").subscribe(response => {
+    this.http.get<Categorie[]>("https://restaurante-backend-production.up.railway.app/categories").subscribe(response => {
       this.allCategories = response
     })
   }
 
   getAllProducts(){
-    this.http.get<product[]>("http://localhost:8080/product").subscribe(response => {
+    this.http.get<product[]>("https://restaurante-backend-production.up.railway.app/product").subscribe(response => {
       this.allProducts = response
     })
   }
 
   createProduct(){
     console.log(this.productSelected, 'categoria')
-    this.http.post<string>("http://localhost:8080/product", this.productSelected, {
+    this.http.post<string>("https://restaurante-backend-production.up.railway.app/product", this.productSelected, {
       headers: {
         'Content-Type': 'application/json'
       },
@@ -93,7 +93,7 @@ export class ProductsComponent {
 
   editProduct(){
     console.log("APERTA MEU C ", this.productSelected)
-    this.http.put<string>(`http://localhost:8080/product/${this.productSelected.id}`, this.productSelected, {
+    this.http.put<string>(`https://restaurante-backend-production.up.railway.app/product/${this.productSelected.id}`, this.productSelected, {
       headers: {
         'Content-Type': 'application/json'
       },

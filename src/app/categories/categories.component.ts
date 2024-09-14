@@ -38,7 +38,7 @@ export class CategoriesComponent {
 
   createCategorie() {
     if (this.nameCategorie.length > 0) {
-      this.http.post("http://localhost:8080/categories", {name: this.nameCategorie}, {
+      this.http.post("https://restaurante-backend-production.up.railway.app/categories", {name: this.nameCategorie}, {
         headers: {
           'Content-Type': 'application/json'
         },
@@ -54,7 +54,7 @@ export class CategoriesComponent {
   editCategorie(){
     if (this.categorieSelected) {
       if (this.nameCategorie.length > 0) {
-        this.http.put(`http://localhost:8080/categories/${this.categorieSelected}`, {name: this.nameCategorie}).subscribe(response => {
+        this.http.put(`https://restaurante-backend-production.up.railway.app/categories/${this.categorieSelected}`, {name: this.nameCategorie}).subscribe(response => {
           this.snackBar.open("Modificado com sucesso", 'Fechar', {duration: 3000})
           this.getAllCategories();
         })
@@ -68,7 +68,7 @@ export class CategoriesComponent {
 
   deleteCategorie(){
     if (this.categorieSelected) {
-      this.http.delete(`http://localhost:8080/categories/${this.categorieSelected}`, { responseType: 'text' }).subscribe(response => {
+      this.http.delete(`https://restaurante-backend-production.up.railway.app/categories/${this.categorieSelected}`, { responseType: 'text' }).subscribe(response => {
         console.log("cuu")
         this.categories = [];
         this.getAllCategories();
@@ -80,7 +80,7 @@ export class CategoriesComponent {
   }
 
   getAllCategories() {
-    this.http.get<categorie[]>("http://localhost:8080/categories").subscribe(response=> {
+    this.http.get<categorie[]>("https://restaurante-backend-production.up.railway.app/categories").subscribe(response=> {
       this.categories = response
     })
   }

@@ -72,7 +72,7 @@ export class LoginComponent {
   
 
   loginAccount(){
-    this.http.post<acess>("http://localhost:8080/login", {login: this.login, password: this.password}, {responseType: "json"}).subscribe(response => {
+    this.http.post<acess>("https://restaurante-backend-production.up.railway.app/login", {login: this.login, password: this.password}, {responseType: "json"}).subscribe(response => {
       sessionStorage.setItem("accessToken", response.acessToken)
       if (response.roles.at(0)?.name == 'client') {
         this.route.navigate(['user'])

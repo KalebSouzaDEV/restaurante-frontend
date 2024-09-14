@@ -27,7 +27,7 @@ export class CartComponent {
 
   createNewOrder(){
     if (this.authService.isAuthenticated('client')) {
-      this.http.post("http://localhost:8080/order ", {valueOrder: this.cartService.valueCartTotal, method: "PIX", client: this.authService.getNameToken()}, {responseType: "text"}).subscribe(response => {
+      this.http.post("https://restaurante-backend-production.up.railway.app/order ", {valueOrder: this.cartService.valueCartTotal, method: "PIX", client: this.authService.getNameToken()}, {responseType: "text"}).subscribe(response => {
         this.cartService.clearCart()
       })
       this.snackBar.open("Compra efetuada com sucesso!", 'Fechar', {duration: 6000})

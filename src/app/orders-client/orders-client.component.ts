@@ -27,7 +27,7 @@ export class OrdersClientComponent {
 
   getOrders(){
     const clientName = this.authService.getNameToken()
-    this.http.get<order[]>(`http://localhost:8080/order/${clientName}`).subscribe(response => {
+    this.http.get<order[]>(`https://restaurante-backend-production.up.railway.app/order/${clientName}`).subscribe(response => {
       this.orders = response
     })
   }

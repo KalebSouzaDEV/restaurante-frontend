@@ -42,21 +42,21 @@ export class HomeComponent {
 	}
 
 	getAllCategories(){
-		this.http.get<categorie[]>("http://localhost:8080/categories").subscribe((response => {
+		this.http.get<categorie[]>("https://restaurante-backend-production.up.railway.app/categories").subscribe((response => {
 			this.categories = response
 			this.getAllProducts()
 		}))
 	}
 
 	getProductsByCategorie(categorieName: string){
-		this.http.get<product[]>(`http://localhost:8080/product/categorie/${categorieName}`).subscribe((response => {
+		this.http.get<product[]>(`https://restaurante-backend-production.up.railway.app/product/categorie/${categorieName}`).subscribe((response => {
 			this.produtos = response
 			console.log("TOMAR NO CUU RES", this.categories)
 		}))
 	}
 
 	getAllProducts(){
-		this.http.get<product[]>("http://localhost:8080/product").subscribe((response => {
+		this.http.get<product[]>("https://restaurante-backend-production.up.railway.app/product").subscribe((response => {
 			this.produtos = response
 		}))
 	}		

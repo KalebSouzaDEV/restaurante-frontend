@@ -34,7 +34,7 @@ export class RegisterComponent {
 
   registerAccount() {
     if (this.cpf.length > 0 && this.password.length > 0 && this.name.length > 0 && this.phone.length > 0 && this.address.length > 0) {
-      this.http.post("http://localhost:8080/users", {login: this.cpf, password: this.password, nome: this.name, address: this.address, phone: this.phone}, {responseType: 'text'}).subscribe(response => {
+      this.http.post("https://restaurante-backend-production.up.railway.app/users", {login: this.cpf, password: this.password, nome: this.name, address: this.address, phone: this.phone}, {responseType: 'text'}).subscribe(response => {
         this.snackBar.open("Cadastro concluído com sucesso", 'Fechar', {duration: 3000})
         this.route.navigate(['login'])
 

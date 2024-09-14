@@ -33,13 +33,13 @@ export class DashboardComponent {
     }
 
     getAllClients(){
-      this.http.get<user[]>("http://localhost:8080/users").subscribe(response => {
+      this.http.get<user[]>("https://restaurante-backend-production.up.railway.app/users").subscribe(response => {
         this.totalClients = response.length - 1
       })
     }
 
     getAllOrders(){
-      this.http.get<order[]>("http://localhost:8080/order").subscribe(response => {
+      this.http.get<order[]>("https://restaurante-backend-production.up.railway.app/order").subscribe(response => {
         this.orders = response
         for (let index = 0; index < response.length; index++) {
           const element = response[index];
