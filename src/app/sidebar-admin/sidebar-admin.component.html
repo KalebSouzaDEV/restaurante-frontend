@@ -1,0 +1,9 @@
+<div class="sidebar-admin">
+    <div class="sidebar-page" (click)="navigateToPage('/')"> 
+        <i class="fa-solid fa-house"></i>
+        VOLTAR
+    </div>
+    <div (click)="navigateToPage('admin/products')" class="sidebar-page" [ngClass]="{'selected': isActive('products')}">Produtos</div>
+    <div (click)="navigateToPage('admin/dashboard')" class="sidebar-page" [ngClass]="{'selected': isActive('dashboard')}">Vendas</div>
+    <div (click)="navigateToPage('admin/categories')" class="sidebar-page" [ngClass]="{'selected': isActive('categories')}">Categorias</div>
+</div>

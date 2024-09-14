@@ -1,0 +1,7 @@
+<div class="sidebar-admin">
+    <div class="sidebar-page" (click)="navigateToPage('/')"> 
+        <i class="fa-solid fa-house"></i>
+        VOLTAR
+    </div>
+    <div (click)="navigateToPage('/user')" class="sidebar-page" [ngClass]="{'selected': isActive('pedidos')}">Pedidos</div>
+</div>

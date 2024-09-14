@@ -1,0 +1,20 @@
+<app-sidebar-client [activePage]="'pedidos'"></app-sidebar-client>
+<div class="page-content">
+    <h1>ÚLTIMOS PEDIDOS</h1>
+
+    <div class="table-sells" *ngIf="orders.length > 0">
+        <table>
+            <tr>
+                <td>data</td>
+                <td>valor gasto</td>
+                <td>método de pagamento</td>
+            </tr>
+            <tr *ngFor="let order of orders">
+                <td>{{order.createdAt | date:'dd/MM/yyyy - HH:mm'}}</td>
+                <td>{{order.valueOrder | currency: 'BRL'}}</td>
+                <td>{{order.method}}</td>
+            </tr>
+        </table>
+    </div>
+    <h3 *ngIf="orders.length <= 0">Você não fez nenhum pedido ainda!</h3>
+</div>

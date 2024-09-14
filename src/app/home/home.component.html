@@ -1,0 +1,43 @@
+<app-header></app-header>
+<app-cart *ngIf="cartService.cartIsVisible == true"></app-cart>
+<div class="content-site">
+    <div class="home-apresentation" id="home">
+        <div>
+            <h1>Escolha sua comida <span>favorita.</span></h1>
+            <p>Aproveite nosso cardápio! Escolha o que desejar e receba em sua casa de forma rápida e totalmente segura.</p>
+            <div class="contact-content">
+                <div class="contact-button">
+                    <a href=""><i class="fa-brands fa-whatsapp"></i></a>    
+                </div>
+                <div class="contact-button">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img src="burger_logo.png" alt="">
+        </div>
+    </div>
+    <div class="cardapio" id="cardapio">
+        <h1>CARDAPIO</h1>
+        <div class="categories-list">
+            <div class="categorie-item" *ngFor="let categorie of categories" [ngClass]="{'selected-categorie': categorieSelected.toLowerCase() == categorie.name.toLowerCase()}" (click)="selectNewCategorie(categorie)">{{categorie.name}}</div>
+        </div>
+        <div class="products-section">
+            <div class="list-products">
+                <div class="product" *ngFor="let produto of produtos">
+                    <img src={{produto.image}} alt="">
+                    <div class="product-infos">
+                        <h2>{{produto.name}}</h2>
+                        <H3>{{produto.price | currency: 'BRL'}}</H3>
+                    </div>
+                    <div class="product-button" (click)="addProductToCart(produto)">
+                        <i class="fa-solid fa-cart-shopping cart-button"></i>  
+                        Adicionar ao carrinho
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

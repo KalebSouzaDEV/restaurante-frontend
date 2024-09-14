@@ -1,0 +1,70 @@
+.parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-forms {
+    background-color: white;
+    width: 60%;
+    height: 80%;
+    padding: 30px;
+    position: relative;
+}
+
+.login-forms p {
+    font-size: 20px;
+    margin-top: 10px;
+    border: 1px solid black;
+    width: 45%;
+    text-align: center;
+    height: 50px;
+    align-content: center;
+    cursor: pointer;
+}
+
+.login-forms p:hover {
+    background-color: #FF6009;
+    color: white;
+}
+
+.login-forms h1 {
+    color: #FF6009;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.login-forms h3 {
+    color: #FF6009;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.login-forms input {
+    width: 100%;
+    border: 1px solid black;
+    height: 50px;
+}
+
+.login-forms h4 {
+    margin-top: 20px;
+}
+
+.login-forms button {
+    position: absolute;
+    bottom: 30px;
+    height: 100px;
+    background-color: #FF6009;
+    width: 90%;
+    border: none;
+    border-radius: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: 500;
+    cursor: pointer;
+}

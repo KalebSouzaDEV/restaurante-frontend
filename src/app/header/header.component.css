@@ -1,0 +1,52 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.header-pages { 
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header-pages i {
+    cursor: pointer;
+}
+
+.header-line {
+    background-color: #FF6009;
+    height: 4px;
+    width: 100%;
+}
+
+.header h1 {
+    color: #FE5F55;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.header h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #38302E;
+    cursor: pointer;
+}
+
+#header-page-selected {
+    color: #FE5F55;
+}
+
+#client-button {
+    border: 1px solid #38302E;
+    border-radius: 15px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.cart-button {
+    font-size: 28px;
+    color: #38302E;
+}

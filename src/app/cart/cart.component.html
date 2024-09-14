@@ -1,0 +1,42 @@
+<div class="cart-container">
+    <div class="cart-header">
+        <div class="close-button" (click)="this.cartService.toggleCart()">
+            <i class="fa-solid fa-x"></i>
+        </div>
+        <h2>CARRINHO</h2>
+    </div>
+    <div class="cart-products" *ngIf="cartService.getAllItems().length <= 0">
+        <h2>Sem produtos no carrinho</h2>
+    </div>
+    <div class="cart-products" *ngIf="cartService.getAllItems().length > 0">
+        <div class="cart-product" *ngFor="let cartItem of cartService.getAllItems()">
+            <div class="product-info">
+                <img src={{cartItem.img}} alt="">
+                <div class="product-details">
+                    <h3>{{cartItem.name}}</h3>
+                    <div class="manage-itens">
+                        <i class="fa-solid fa-minus" (click)="cartService.removeItemFromCart(cartItem.name, 1)"></i>
+                        <div class="manage-itens-value">
+                            {{cartItem.quantity}}
+                        </div>
+                        <i class="fa-solid fa-plus" (click)="cartService.addItemToCart(cartItem.name, 1, cartItem.img, cartItem.price)"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="product-price">
+                <h1>Preço:</h1>
+                <h1>{{cartItem.valueTotal | currency: "BRL"}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="cart-footer">
+        <div class="border"></div>
+        <div class="cart-value">
+            <h2>Valor total</h2>
+            <h2>{{cartService.valueCartTotal | currency: 'BRL'}}</h2>
+        </div>
+        <div class="cart-button" (click)="createNewOrder()">
+            FINALIZAR COMPRA
+        </div>
+    </div>
+</div>

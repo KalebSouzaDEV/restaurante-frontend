@@ -1,0 +1,17 @@
+<div class="parent-container">
+    <div class="login-forms">
+        <h1>Cadastrar-se</h1>
+        <h3>CPF</h3>
+        <input type="text" [(ngModel)]="cpf" (input)="onInputCPF($event)" maxlength="14">
+        <h3>SENHA</h3>
+        <input type="password" [(ngModel)]="password">
+        <h3>Nome</h3>
+        <input type="text" [(ngModel)]="name">
+        <h3>Celular</h3>
+        <input type="tel" [(ngModel)]="phone" (input)="onInputPhone($event)" maxlength="15">
+        <h3>Endereço</h3>
+        <input type="text" [(ngModel)]="address"> 
+        <p (click)="navigatePage('login')"> Clique aqui para se logar</p>
+        <button (click)="registerAccount()">CADASTRAR</button>
+    </div>
+</div>

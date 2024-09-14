@@ -1,0 +1,24 @@
+.page-content {
+    padding-left: 250px;
+    padding-top: 20px;
+}
+
+.page-content h1 {
+    font-size: 44px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.table-sells table{
+    border: 1px solid black;
+}
+
+.table-sells td {
+    border: 1px solid black;
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: 700;
+    width: 350px;
+    text-align: center;
+    height: 40px;
+}

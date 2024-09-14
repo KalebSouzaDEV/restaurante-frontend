@@ -1,0 +1,66 @@
+<app-sidebar-admin [activePage]="'products'"></app-sidebar-admin>
+<div class="page-content">
+    <h1>Produtos</h1>
+    <div class="pageSelected">
+        <div class="button" [ngClass]="{'selected': page == 'creating'}" (click)="changePage('creating')">Criar</div>
+        <div class="button" [ngClass]="{'selected': page == 'editing'}" (click)="changePage('editing')">Editar</div>
+    </div>
+    <div *ngIf="page == 'creating'">
+        <div class="info-forms">
+            <div>
+                <h3>Nome</h3>
+                <input type="text" placeholder="Digite o nome do produto" [(ngModel)]="productSelected.name">
+            </div>
+            <div>
+                <h3>Valor</h3>
+                <input type="text" [value]="productSelected.price | decimalComma" [(ngModel)]="productSelected.price" (input)="onPriceInput($event)">
+            </div>
+        </div>
+        <div class="info-forms">
+            <div>
+                <h3>Imagem</h3>
+                <input type="text" [(ngModel)]="productSelected.image" placeholder="Digite o link da imagem">
+            </div>
+            <div>
+                <h3>Categoria</h3>
+                <select [(ngModel)]="productSelected.categorie">
+                    <option value="" disabled selected>Selecione uma categoria</option>
+                    <option value={{categorie.name}} *ngFor="let categorie of allCategories">{{categorie.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="button-create" (click)="createProduct()">Criar Produto</div>
+    </div>
+    <div *ngIf="page == 'editing'">
+        <div class="info-forms">
+            <select class="select-product" (change)="selectProductToEditing($event)">
+                <option value="" disabled selected>Selecione um produto</option>
+                <option value={{product.name}} *ngFor="let product of allProducts">{{product.name}}</option>
+            </select>
+        </div>
+        <div class="info-forms">
+            <div>
+                <h3>Nome</h3>
+                <input type="text" [(ngModel)]="productSelected.name">
+            </div>
+            <div>
+                <h3>Valor</h3>
+                <input type="text" [value]="productSelected.price | decimalComma" [(ngModel)]="productSelected.price" (input)="onPriceInput($event)">
+            </div>
+        </div>
+        <div class="info-forms">
+            <div>
+                <h3>Imagem</h3>
+                <input type="text" [(ngModel)]="productSelected.image">
+            </div>
+            <div>
+                <h3>Categoria</h3>
+                <select [(ngModel)]="productSelected.categorie">
+                    <option value={{productSelected.categorie}} disabled selected>{{productSelected.categorie}}</option>
+                    <option value={{categorie.name}} *ngFor="let categorie of allCategories">{{categorie.name}}</option>
+                </select>
+            </div>
+        </div>
+        <div class="button-create" (click)="editProduct()">Editar Produto</div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="content-site">
+    <div class="header">
+        <h1>RESTAURANTE</h1>
+        <div class="header-pages">
+            <h3 id="header-page-selected" (click)="scrollToSection('home')">Home</h3>
+            <h3 (click)="scrollToSection('cardapio')">Cardápio</h3>
+            <h3 id="client-button" (click)="navigatePage('user')">Área do Cliente</h3>
+            <div>
+                <i class="fa-solid fa-cart-shopping cart-button" (click)="toggleCart()"></i>  
+            </div>
+        </div>
+    </div>
+</div>
+<div class="header-line"></div>

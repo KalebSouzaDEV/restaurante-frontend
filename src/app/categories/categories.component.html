@@ -1,0 +1,30 @@
+<app-sidebar-admin [activePage]="'categories'"></app-sidebar-admin>
+<div class="page-content">
+    <h1>Categorias</h1>
+    <div class="pageSelected">
+        <div class="button" [ngClass]="{'selected': page == 'creating'}" (click)="changePage('creating')">Criar</div>
+        <div class="button" [ngClass]="{'selected': page == 'editing'}" (click)="changePage('editing')">Editar</div>
+    </div>
+
+    <div *ngIf="page == 'creating'" class="content">
+
+        <h3>NOME</h3>
+        <input type="text" [(ngModel)]="nameCategorie" placeholder="Digite o nome da categoria">
+
+        <div class="button-action" (click)="createCategorie()">Criar categoria</div>
+    </div>
+
+    <div *ngIf="page == 'editing'" class="content">
+        
+        <select [(ngModel)]="categorieSelected">
+            <option value="" disabled selected>Selecione uma categoria</option>
+            <option value={{categorie.name}} *ngFor="let categorie of categories">{{categorie.name}}</option>
+        </select>
+
+        <h3>NOME</h3>
+        <input type="text" [(ngModel)]="nameCategorie" placeholder="Digite o nome da categoria">
+
+        <div class="button-action" (click)="editCategorie()">Editar categoria</div>
+        <div class="button-action delete" (click)="deleteCategorie()">Deletar categoria</div>
+    </div>
+</div>

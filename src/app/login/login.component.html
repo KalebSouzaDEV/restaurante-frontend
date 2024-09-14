@@ -1,0 +1,15 @@
+<div class="parent-container">
+    <div class="login-forms">
+        <h1>Entrar na conta</h1>
+        <h3>CPF</h3>
+        <input type="text" [(ngModel)]="login" (input)="onInputCPF($event)">
+        <h3>SENHA</h3>
+        <input type="password" [(ngModel)]="password">
+        <h4>Caso deseje entrar na conta de administrador:</h4>
+        <p>User: admin, Senha: 123456</p>
+        
+        <h5 (click)="navigatePage('register')">Clique aqui para se cadastrar</h5>
+
+        <button (click)="loginAccount()">ENTRAR</button>
+    </div>
+</div>

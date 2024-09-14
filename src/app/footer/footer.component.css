@@ -1,0 +1,16 @@
+.footer {
+    background-color: #FFB20F;
+    height: 80px;
+    padding-top: 25px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.footer-imgs img{
+    margin-top: -10px;
+    padding-right: 20px;
+}
